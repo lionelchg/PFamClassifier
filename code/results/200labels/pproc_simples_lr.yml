@@ -1,0 +1,14 @@
+# Configuration file for training/validation
+# post-processing of networks from PlasmaNet
+fig_dir: 'simples_lr/'
+data_dir: 'train/'
+type: 'valid'
+
+networks:
+    simple_40embed_lr1: '$l_r$ = 1.0'
+    simple_40embed_lr01: '$l_r$ = 0.1'
+    simple_40embed_lr001: '$l_r$ = 0.01'
+    simple_40embed_lr0001: '$l_r$ = 0.001'
+
+plot:
+    loss_acc: ['loss', 'accuracy']

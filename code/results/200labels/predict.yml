@@ -1,0 +1,19 @@
+# Configuration file for prediction
+# The examples are taken form the test dataset
+
+sequences: [
+    # PF13649.6
+    'VLDVACGTCDVAMEARNQTGDAAFIIGTDFSPGMLTLGLQKLKKNRRFATIPLVCANALALPFQSTHFDAVLIAFGIRNIMDRKGALKQFHDALKPGG',
+    # PF00677.17
+    'TGHVDGVGKILRKEKEDVAWVLSIAAPPQVTPYLIEKGSVAVDGVSLTVVEVKGDVFKVSLIPHTAEHTTLGLKGPGDKVNLEAD',
+    # PF18012.1 - Only one entry in test dataset -> really rare
+    'STKDRKIIPLKMCFAARNLSMPDLENRLIELHSPDSRNTLILRCKDTATAHSWFVAIHT']
+n_labels: 200
+max_length: 100
+n_gpu: 0
+
+location: 'train/simple_40embed'
+model:
+    type: 'SimpleProteinClass'
+    args:
+        embed_dim: 40

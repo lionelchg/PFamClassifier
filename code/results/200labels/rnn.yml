@@ -1,0 +1,30 @@
+# Configuration file for training of Protein
+# classification model
+data_path: '../../input/random_split'
+batch_size: 256
+n_labels: 200
+max_length: 100
+
+optimizer:
+    type: 'SGD'
+    args:
+        lr: 1.0
+
+scheduler:
+    step_size: 2
+    gamma: 0.1
+
+model:
+    type: 'RNNProteinClass'
+    args:
+        embed_dim: 80
+        hidden_size: 50
+        num_layers: 1
+
+trainer:
+    save_dir: 'train/rnn_40embed'
+    epochs: 20
+    save_period: 5
+    monitor: 'max accuracy'
+    clip_grad_norm: 5.0
+    n_gpu: 1

@@ -1,0 +1,13 @@
+# Configuration file for training/validation
+# post-processing of networks from PlasmaNet
+fig_dir: 'lstms_lr/'
+data_dir: 'train/'
+type: 'train'
+
+networks:
+    lstm_40embed_lr01: '$l_r$ = 0.1'
+    lstm_40embed_lr001: '$l_r$ = 0.01'
+    lstm_40embed_lr0001: '$l_r$ = 0.001'
+
+plot:
+    loss_acc: ['loss', 'accuracy']

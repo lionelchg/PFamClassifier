@@ -1,0 +1,13 @@
+# Configuration file for training/validation
+# post-processing of networks from PlasmaNet
+fig_dir: 'networks_comp/'
+data_dir: 'train/'
+type: 'valid'
+
+networks:
+    simple_40embed: 'SimpleProteinClass'
+    lstm_40embed: 'LSTMProteinClass'
+    rnn_40embed: 'RNNProteinClass'
+
+plot:
+    loss_acc: ['loss', 'accuracy']

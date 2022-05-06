@@ -1,0 +1,16 @@
+\begin{tikzpicture}[node distance=1.5cm]
+    \tikzstyle{arrow} = [thick, ->, >=stealth]
+    \tikzstyle{neuralnetwork} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+
+    \tikzstyle{plasmatransport} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+    % Blocks
+    \node (nn) [neuralnetwork, xshift=-1.0cm] {$\vb{X} \in \intint{0}{20}^{b_s \times l_\mrm{max}}$};
+    \node (plasmat) [plasmatransport, xshift=4.0cm, right of=nn] {$\vb{X}_{h1} \in \R^{b_s \times l_\mrm{max} \times n_e}$};
+    \node (hidden) [plasmatransport, xshift=4.0cm, right of=plasmat] {$\vb{X}_{h2} \in \R^{b_s \times h_s}$};
+    \node (final) [neuralnetwork, yshift=-1.0cm, below of=hidden] {$\vb{Z} \in \R^{b_s \times n_\mrm{mc}}$};
+
+    % Arrows
+    \draw [arrow] (nn) -- node[text width=2.5cm,midway,above=1.5em]{Embedding} (plasmat);
+    \draw [arrow] (plasmat) -- node[text width=2.5cm,midway,above=1.5em, xshift=0.cm]{RNN or LSTM layer} (hidden);
+    \draw [arrow] (hidden) -- node[text width=2.5cm,midway,above=0.5em, xshift=-1.0cm, yshift=-0.5cm]{FC layer} (final);
+\end{tikzpicture}

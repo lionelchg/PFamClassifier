@@ -1,0 +1,12 @@
+# Configuration file for training/validation
+# post-processing of networks from PlasmaNet
+fig_dir: 'simple_nlabels/'
+data_dir: 'train/'
+type: 'valid'
+
+networks:
+    5000labels/simple_40embed: 'SimpleProteinClass 5k'
+    15000labels/simple_40embed: 'SimpleProteinClass 15k'
+
+plot:
+    loss_acc: ['loss', 'accuracy']

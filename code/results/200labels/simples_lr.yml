@@ -1,0 +1,39 @@
+# Configuration file for training of Protein
+# classification model
+
+description: 'Varying the learning rate'
+mode: 'seq'
+optimizer/args/lr: [0.001, 0.01, 0.1, 1.0]
+trainer/save_dir: [
+                'train/simple_40embed_lr0001',
+                'train/simple_40embed_lr001',
+                'train/simple_40embed_lr01',
+                'train/simple_40embed_lr1']
+
+base:
+    data_path: '../../input/random_split'
+    batch_size: 256
+    n_labels: 200
+    max_length: 100
+
+    optimizer:
+        type: 'SGD'
+        args:
+            lr: 0.1
+
+    scheduler:
+        step_size: 10
+        gamma: 1.0
+
+    model:
+        type: 'SimpleProteinClass'
+        args:
+            embed_dim: 40
+
+    trainer:
+        save_dir: ''
+        epochs: 20
+        save_period: 5
+        monitor: 'max accuracy'
+        clip_grad_norm: 5.0
+        n_gpu: 1

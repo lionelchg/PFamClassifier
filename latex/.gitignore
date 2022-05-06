@@ -1,0 +1,16 @@
+*.aux
+*.dvi
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.toc
+.texpadtmp
+.DS_Store
+*.fls
+*.fdb_latexmk
+*.md5
+*.dpth
+*.auxlock
