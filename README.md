@@ -1,6 +1,6 @@
 # PFamClassifier repository
 
-This is a repository for classifying protein domains of the PFam dataset available at on [Kaggle](https://www.kaggle.com/datasets/googleai/pfam-seed-random-split).
+This is a repository for classifying protein domains of the PFam dataset available at on [Kaggle](https://www.kaggle.com/datasets/googleai/pfam-seed-random-split). Mirror of a cleaned private repository done for a coding challenge.
 
 ## Overview of the repository
 
